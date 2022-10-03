@@ -1,0 +1,51 @@
+1- Configure smpt in your local host
+installations:
+$ yum install procmail mailx sendmail sendmail-cf-y
+changes in the sendmail.mc
+$define(`SMART_HOST',`smpt.google.com')
+update
+$ m4 sendmail.mc > sendmail.cf
+$ systemctl start sendmail
+$ mail -s "subject" shivam.sg@sigmoidanalytics.com
+> content
+> ctrl+d
+
+
+2-Add user in your local host which cant execute sudo commands
+$ adduser username
+default users will not have sudo permissions
+
+3-
+  $ alias describe ='ls -l'
+  to make it permanet
+  $ sudo nano .bashrc 
+  $ alias describe ='ls -l'
+  
+4-
+$ touch file
+$ find / -name 'research' -exec gzip '{}' ';'
+$ find / -name 'research.gz' -exec gunzip '{}' ';'
+
+
+5-
+Umask777
+
+6-
+$  vim showtime.sh
+>#!/bin/bash
+>while true
+>do
+>	echo $(date)
+>	sleep 60
+>done
+
+$ cd /etc/systemd/system
+
+$ sudo vim showtime.service
+>[Service]
+>ExecStart=bash /home/shivam/showtime.sh
+
+$ systemctl daemon-reload
+$ systemctl start showtime
+
+$ systemctl status showtime
