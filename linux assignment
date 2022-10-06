@@ -1,4 +1,4 @@
-1- Configure smpt in your local host
+1-
 installations:
 $ yum install procmail mailx sendmail sendmail-cf-y
 changes in the sendmail.mc
@@ -6,14 +6,15 @@ $define(`SMART_HOST',`smpt.google.com')
 update
 $ m4 sendmail.mc > sendmail.cf
 $ systemctl start sendmail
-$ mail -s "subject" shivam.sg@sigmoidanalytics.com
+$ mail -s "subject" vishal.sg@sigmoidanalytics.com
 > content
 > ctrl+d
 
 
-2-Add user in your local host which cant execute sudo commands
+2-
 $ adduser username
 default users will not have sudo permissions
+makw changes in ./bashrc file for permanent
 
 3-
   $ alias describe ='ls -l'
